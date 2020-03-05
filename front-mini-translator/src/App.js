@@ -8,6 +8,7 @@ function App() {
     <div className="App">
       <TextLeft></TextLeft>
       <TextRight></TextRight>
+      <button>Translate</button>
     </div>
   );
 }
