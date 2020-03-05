@@ -8,7 +8,8 @@ export default class TextRight extends Component {
 
     this.state = {
       languaje: [],
-      translate: ""
+      translate: "",
+      text: ""
     };
   }
 
@@ -21,10 +22,24 @@ export default class TextRight extends Component {
 
   render() {
     const { languaje } = this.state;
+    const { text } = this.props;
+    const { leftLanguaje } = this.props;
+    const { rightLanguaje } = this.props;
+    const translate = getTraslate(text, leftLanguaje, rightLanguaje);
     console.log(languaje);
     return (
       <div>
-        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <textarea
+          name=""
+          id=""
+          cols="30"
+          rows="10"
+          value={translate}
+        ></textarea>
+        <select name="languaje1" id="left">
+          <option value="en">English</option>
+          <option value="es">Spanish</option>
+        </select>
         {/* <select id={languaje.dirs} value={languaje.langs}></select> */}
       </div>
     );
